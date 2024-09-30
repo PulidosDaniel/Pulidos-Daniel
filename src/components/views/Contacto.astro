@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components";
+
+const contactLinks = [
+	{
+		icon: "whatsapp",
+		text: "Llamanos o envianos un mensaje",
+		href: "tel:+123456789",
+	},
+	{
+		icon: "email-outline",
+		text: "Envianos un email",
+		href: "mailto:info@pulidodepisos.com",
+	},
+	{
+		icon: "instagram-outline",
+		text: "¡Encontranos en Instagram!",
+		href: "https://instagram.com/tuempresa",
+	},
+	{
+		icon: "facebook-outline",
+		text: "Seguínos en Facebook",
+		href: "https://facebook.com/tuempresa",
+	},
+];
+---
+
+<section id="contacto" class="w-full py-20">
+	<div class="container px-4 md:px-6 mx-auto max-w-screen-xl space-y-8">
+		<div
+			class="flex flex-col items-center justify-center space-y-4 text-center"
+		>
+			<h2 class="text-accent font-bold text-4xl/[1.1] md:text-5xl/[1.1]">
+				Contáctanos
+			</h2>
+			<p
+				class="max-w-[600px] text-gray-600 text-xl/relaxed font-normal text-balance"
+			>
+				Estamos aquí para ayudarte con todos tus proyectos. <br /> Elige
+				la opción que prefieras para contactarnos.
+			</p>
+		</div>
+		<div class="mx-auto max-w-sm space-y-6 mt-8">
+			{
+				contactLinks.map((link) => (
+					<a
+						href={link.href}
+						class="w-full h-16 bg-gray-100 text-accent border-2 border-accent transition-all duration-300 hover:bg-accent hover:text-white hover:scale-105 py-2 px-4 rounded-xl flex items-center justify-center space-x-2 text-lg font-normal"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Icon name={link.icon} size={32} />
+						<span>{link.text}</span>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</section>

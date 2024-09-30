@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import { image1 } from "../../images";
+import CTA from "@UI/CTA.astro";
+import CTAOutline from "@UI/CTAOutline.astro";
+---
+
+<section
+	id="hero"
+	class="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between gap-4 py-20 px-8 lg:px-10 lg:gap-8 lg:max-h-[640px] lg:max-w-screen-xl lg:h-[640px]"
+>
+	<div
+		class="text-center lg:text-left lg:basis-1/2 lg:h-full flex flex-col justify-between"
+	>
+		<h1
+			class="text-accent mb-4 text-center text-pretty text-4xl/[1.1] font-bold font-heading md:text-5xl/[1.1] lg:text-left lg:-mt-3 xl:text-6xl/[1.1]"
+		>
+			<span class="text-primary uppercase">Pulimos</span> tus <span
+				class="text-secondary uppercase">pisos</span
+			> y hacemos que brillen como nunca.
+		</h1>
+		<p
+			class="text-gray-600 mt-4 mb-8 text-xl/relaxed text-balance font-normal sm:px-16 lg:mt:10 lg:mb-10 lg:text-left lg:inline lg:px-0 lg:text-pretty"
+		>
+			Con más de <span class="font-bold">50 años</span> de experiencia en el
+			rubro, en Pulidos Daniel garantizamos la perfección en cada trabajo.
+			Descubrí cómo transformamos tus espacios.<br />¡Solicitá un
+			presupuesto gratuito!
+		</p>
+		<div
+			class="flex flex-col flex-wrap justify-center items-center gap-4 mt-4 mb-4 w-full text-gray-500 sm:justify-between md:flex-row md:flex-nowrap lg:justify-start lg:gap-4 lg:m-0"
+		>
+			<CTAOutline
+				href="#resultados"
+				title="revisa nuestros resultados"
+				ariaLabel="Descubrí nuestros proyectos"
+				text="Resultados"
+				icon="check"
+				size={24}
+			/>
+			<CTA
+				href="#contacto"
+				title="ir a la sección de contacto"
+				ariaLabel="Solicitá  un presupuesto gratuito"
+				text="Contactanos"
+				icon="phone-outline"
+				size={24}
+			/>
+		</div>
+	</div>
+
+	<picture class="w-full lg:basis-1/2 rounded-xl overflow-hidden lg:h-full">
+		<Image
+			src={image1}
+			alt="Pulido de piso de mármol en salón"
+			class="size-full object-cover aspect-square"
+			title="Pulido de piso de mármol"
+			loading="lazy"
+		/>
+	</picture>
+</section>

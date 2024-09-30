@@ -1,0 +1,164 @@
+---
+import { Image } from "astro:assets";
+import {
+	image2,
+	image3,
+	image4,
+	image5,
+	image6,
+	image7,
+	image8,
+	image9,
+	image10,
+	image11,
+	image12,
+	image13,
+	image14,
+	image15,
+} from "../../images";
+
+const trabajosRealizados = [
+	{
+		id: 1,
+		titulo: "Pulido de mármol en sala de estar",
+		descripcion: "Restauración completa de suelo de mármol",
+		imagen: image2,
+	},
+	{
+		id: 2,
+		titulo: "Abrillantado de granito en cocina",
+		descripcion: "Recuperación del brillo original en encimeras",
+		imagen: image3,
+	},
+	{
+		id: 3,
+		titulo: "Pulido de terrazo en oficina",
+		descripcion: "Renovación de suelo comercial de alto tráfico",
+		imagen: image4,
+	},
+	{
+		id: 4,
+		titulo: "Restauración de suelo de madera",
+		descripcion: "Lijado y barnizado de parquet antiguo",
+		imagen: image5,
+	},
+	{
+		id: 5,
+		titulo: "Pulido de hormigón en garaje",
+		descripcion: "Acabado brillante para suelo industrial",
+		imagen: image6,
+	},
+	{
+		id: 6,
+		titulo: "Tratamiento de suelo de pizarra",
+		descripcion: "Sellado y abrillantado de pizarra natural",
+		imagen: image7,
+	},
+	{
+		id: 7,
+		titulo: "Pulido de mosaico hidráulico",
+		descripcion: "Recuperación de diseños originales en baldosas",
+		imagen: image8,
+	},
+	{
+		id: 8,
+		titulo: "Abrillantado de travertino en baño",
+		descripcion: "Restauración de suelo y paredes de travertino",
+		imagen: image9,
+	},
+	{
+		id: 9,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image10,
+	},
+	{
+		id: 10,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image11,
+	},
+	{
+		id: 11,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image12,
+	},
+	{
+		id: 12,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image13,
+	},
+	{
+		id: 13,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image14,
+	},
+	{
+		id: 14,
+		titulo: "Pulido de suelo de resina epoxy",
+		descripcion: "Acabado espejo para suelo industrial moderno",
+		imagen: image15,
+	},
+];
+---
+
+<section id="resultados" class="w-full py-20">
+	<div class="container max-w-screen-xl px-4 md:px-6 mx-auto">
+		<div
+			class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+		>
+			<h2 class="text-accent font-bold text-4xl/[1.1] md:text-5xl/[1.1]">
+				Nuestros Resultados
+			</h2>
+			<p
+				class="max-w-[900px] text-gray-600 text-xl/relaxed text-balance font-normal"
+			>
+				Descubre la calidad de nuestro trabajo a través de estos
+				proyectos completados. Cada imagen muestra la transformación y
+				el brillo que podemos lograr en diferentes tipos de suelos.
+			</p>
+		</div>
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6"
+		>
+			{
+				trabajosRealizados.map((trabajo, index) => (
+					<div
+						class={`relative overflow-hidden rounded-xl
+                            ${
+								-index === 0
+									? "lg:col-span-2 lg:row-span-2"
+									: index === 3
+										? "lg:col-span-2"
+										: index === 8
+											? "lg:col-span-2"
+											: index === 13
+												? "lg:col-span-2"
+												: ""
+							}
+                        `}
+					>
+						<Image
+							src={trabajo.imagen}
+							alt={trabajo.titulo}
+							width={800}
+							height={600}
+							class="w-full h-full object-cover aspect-square"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4 text-white">
+							<h3 class="text-lg font-semibold mb-1">
+								{trabajo.titulo}
+							</h3>
+							<p class="text-sm text-gray-300 max-w-sm">
+								{trabajo.descripcion}
+							</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
